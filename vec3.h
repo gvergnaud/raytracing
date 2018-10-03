@@ -5,7 +5,7 @@
 class vec3 {
 public:
     vec3() {}
-    
+
     vec3(float e0, float e1, float e2) {
         e[0] = e0;
         e[1] = e1;
@@ -65,8 +65,24 @@ inline vec3 operator+(const vec3 &v1, const vec3 &v2) {
     return vec3(v1.e[0] + v2.e[0], v1.e[1] + v2.e[1], v1.e[2] + v2.e[2]);
 }
 
+inline vec3 operator+(const vec3 &v, float x) {
+    return vec3(v.e[0] + x, v.e[1] + x, v.e[2] + x);
+}
+
+inline vec3 operator+(float x, const vec3 &v) {
+    return vec3(v.e[0] + x, v.e[1] + x, v.e[2] + x);
+}
+
 inline vec3 operator-(const vec3 &v1, const vec3 &v2) {
     return vec3(v1.e[0] - v2.e[0], v1.e[1] - v2.e[1], v1.e[2] - v2.e[2]);
+}
+
+inline vec3 operator-(const vec3 &v, float x) {
+    return vec3(v.e[0] - x, v.e[1] - x, v.e[2] - x);
+}
+
+inline vec3 operator-(float x, const vec3 &v) {
+    return vec3(v.e[0] - x, v.e[1] - x, v.e[2] - x);
 }
 
 inline vec3 operator*(const vec3 &v1, const vec3 &v2)
