@@ -15,6 +15,8 @@ vec3 random_point_in_unit_sphere() {
 }
 
 // retours la reflexivité en fonction de l'angle avec l'element
+// c'est ensuite utilisée comme une probabilité que le rayon soit
+// reflechit ou refracté par le dielectric material.
 float schlick(float cosine, float refraction_index) {
     float r0 = (1 - refraction_index) / (1 + refraction_index);
     r0 = r0 * r0;
